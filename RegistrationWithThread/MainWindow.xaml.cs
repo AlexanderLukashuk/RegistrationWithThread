@@ -23,6 +23,7 @@ namespace RegistrationWithThread
     public partial class MainWindow : Window
     {
         private readonly ApplicationContext context;
+        private static object lockObject = new object();
         public MainWindow()
         {
             InitializeComponent();
@@ -45,8 +46,14 @@ namespace RegistrationWithThread
 
                 if (password == repeatPassword)
                 {
+                    lock (lockObject)
+                    {
+                        User user = new User(login, email, phone, password);
+                        context.Users.Add(user);
+                        context.SaveChanges();
+
+                    }
                     MessageBox.Show("Вы успешно зарегистрировались");
-                    User user = new User(login, email, phone, password);
                 }
                 else
                 {

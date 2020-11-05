@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Registration" Height="500" Width="500">
+        Title="Registration" Height="500" Width="500" Closing="WindowClosing">
     <Grid>
         <TextBox Name="loginTextBox" HorizontalAlignment="Center" Margin="70,123,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25"  />
         <TextBlock Text="Login:" HorizontalAlignment="Left" Margin="125,121,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.451,1.484" />
