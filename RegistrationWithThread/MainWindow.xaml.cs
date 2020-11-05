@@ -1,4 +1,5 @@
-﻿using RegistrationWithThread.Models;
+﻿using RegistrationWithThread.Data;
+using RegistrationWithThread.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,12 @@ namespace RegistrationWithThread
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly ApplicationContext context;
         public MainWindow()
         {
             InitializeComponent();
+
+            context = new ApplicationContext();
         }
 
         private void registerButtonClick(object sender, RoutedEventArgs e)
@@ -33,8 +37,10 @@ namespace RegistrationWithThread
             var phone = phoneTextBox.Text;
             var password = passwordTextBox.Password.ToString();
             var repeatPassword = repeatPasswordTextBox.Password.ToString();
+            int phoneNumber;
+            bool isPhoneNumber = int.TryParse(phoneTextBox.Text, out phoneNumber);
 
-            if (login.Length > 0 && email.Length > 0 && phone.Length > 0 && password.Length > 0 && repeatPassword.Length > 0)
+            if (login.Length > 0 && email.Length > 0 && phone.Length > 0 && password.Length > 0 && repeatPassword.Length > 0 && isPhoneNumber)
             {
 
                 if (password == repeatPassword)
@@ -51,6 +57,11 @@ namespace RegistrationWithThread
             {
                 MessageBox.Show("Неверная форма заполнения");
             }
+        }
+
+        private void WindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            context.Dispose();
         }
     }
 }
