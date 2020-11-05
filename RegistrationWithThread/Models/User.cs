@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistrationWithThread.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -18,6 +19,13 @@ namespace RegistrationWithThread.Models
             Email = email;
             Phone = phone;
             Password = password;
+        }
+
+        public void AddUserToDB(object obj)
+        {
+            ApplicationContext context = (ApplicationContext)obj;
+            context.Users.Add(this);
+            context.SaveChanges();
         }
     }
 }

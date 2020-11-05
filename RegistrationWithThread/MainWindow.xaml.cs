@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +23,7 @@ namespace RegistrationWithThread
     /// </summary>
     public partial class MainWindow : Window
     {
+        //private static readonly ApplicationContext context = new ApplicationContext();
         private readonly ApplicationContext context;
         private static object lockObject = new object();
         public MainWindow()
@@ -46,13 +48,10 @@ namespace RegistrationWithThread
 
                 if (password == repeatPassword)
                 {
-                    lock (lockObject)
-                    {
-                        User user = new User(login, email, phone, password);
-                        context.Users.Add(user);
-                        context.SaveChanges();
+                    User user = new User(login, email, phone, password);
+                    Thread backgroundThread = new Thread(new ParameterizedThreadStart(user.AddUserToDB));
+                    backgroundThread.Start(context);
 
-                    }
                     MessageBox.Show("Вы успешно зарегистрировались");
                 }
                 else
@@ -64,6 +63,8 @@ namespace RegistrationWithThread
             {
                 MessageBox.Show("Неверная форма заполнения");
             }
+
+            MessageBox.Show("Регистрация завершена");
         }
 
         private void WindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
