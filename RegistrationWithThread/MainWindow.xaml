@@ -1,0 +1,32 @@
+﻿<Window x:Class="RegistrationWithThread.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistrationWithThread"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Registration" Height="500" Width="500">
+    <Grid>
+        <TextBox Name="loginTextBox" HorizontalAlignment="Center" Margin="70,123,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25"  />
+        <TextBlock Text="Login:" HorizontalAlignment="Left" Margin="125,121,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.451,1.484" />
+        <TextBox Name="emailTextBox" HorizontalAlignment="Center" Margin="70,160,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25" />
+        <TextBlock Text="Email:" HorizontalAlignment="Left" Margin="128,158,0,0" VerticalAlignment="Top" FontSize="20" />
+        <TextBox Name="phoneTextBox" HorizontalAlignment="Center" Margin="70,200,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="25" />
+        <TextBlock Text="Phone:" HorizontalAlignment="Left" Margin="118,198,0,0" VerticalAlignment="Top" FontSize="20" />
+        <PasswordBox Name="passwordTextBox" HorizontalAlignment="Center" Margin="70,240,0,0" VerticalAlignment="Top" Width="180" Height="25" />
+        <TextBlock Text="Password:" HorizontalAlignment="Left" Margin="91,238,0,0" VerticalAlignment="Top" FontSize="20" />
+        <PasswordBox Name="repeatPasswordTextBox" HorizontalAlignment="Center" Margin="70,280,0,0" VerticalAlignment="Top" Width="180" Height="25" Cursor="IBeam" />
+        <TextBlock Text="Repeat password:" HorizontalAlignment="Left" Margin="25,278,0,0" VerticalAlignment="Top" FontSize="20" />
+        <Button Content="Register" Click="registerButtonClick" HorizontalAlignment="Center" Margin="70,340,0,0" VerticalAlignment="Top" Width="100" Height="30" Cursor="Hand" />
+        <TextBlock HorizontalAlignment="Left" Margin="148,27,0,0" Text="Registration" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="50"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,5 @@
+C:\Users\Luka_ry90\source\repos\RegistrationWithThread\RegistrationWithThread\obj\Debug\netcoreapp3.1\RegistrationWithThread.csprojAssemblyReference.cache
+C:\Users\Luka_ry90\source\repos\RegistrationWithThread\RegistrationWithThread\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\Luka_ry90\source\repos\RegistrationWithThread\RegistrationWithThread\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Luka_ry90\source\repos\RegistrationWithThread\RegistrationWithThread\obj\Debug\netcoreapp3.1\RegistrationWithThread_MarkupCompile.cache
+C:\Users\Luka_ry90\source\repos\RegistrationWithThread\RegistrationWithThread\obj\Debug\netcoreapp3.1\RegistrationWithThread_MarkupCompile.lref
